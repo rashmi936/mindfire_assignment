@@ -1,0 +1,31 @@
+﻿<h1>airport</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add airport</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%">Airport Id</th>
+            <th style="width: 30%">Airport Name</th>
+            <th style="width: 30%">fuel Capaclity</th>
+            <th style="width: 10%">Availabilty</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let airport of airports">
+            <td>{{airport._id}}</td>
+            <td>{{airport.airport_name}}</td>
+            <td>{{airport.fuel_capacity}}</td>
+            <td>{{airport.fuel_available}}</td>  
+
+
+            <td style="white-space: nowrap">
+                <!-- <a routerLink="edit/{{airport.id}}" class="btn btn-sm btn-primary mr-1">Edit</a> -->
+              
+            </td>
+        </tr>
+        <tr *ngIf="!airports">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

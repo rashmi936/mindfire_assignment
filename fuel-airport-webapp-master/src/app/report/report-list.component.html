@@ -1,0 +1,68 @@
+﻿
+<button (click)="makeAirportPdf();">Download pdf</button>
+<table id="MyDiv" class="table table-striped" #airportcontent>
+    <thead>
+        <tr>
+            <th style="">Airport Name</th>
+            <th style="">Fuel Availiblity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of airportReports">
+            <td>{{user.airport_name}}</td>
+            <td>{{user.fuel_available}}</td>
+            
+        </tr>
+        <tr *ngIf="!airportReports">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<button (click)="makeFuelPdf()">Download pdf</button>
+<h1>Fuel Report</h1>
+
+<div #Fuelcontent id="FuelPdf">
+ <li *ngFor="let fr of fuelReport"> 
+
+ <div>
+
+Airport: {{fr.airport_name}}
+<br/>
+Fuel Available : {{fr.fuel_available}}
+</div>
+<table  class="table table-striped"   >
+    <thead>
+        <tr>
+           
+              <th style="">Date Time</th>
+                <th style="">Type</th>
+                <th style="">Qunatity</th>
+                <th style="">Aircraft</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+         
+                <tr *ngFor="let t of fr.transaction" >
+                <td>{{t.transaction_date_time |date :'short' }}</td>
+                <td>{{t.transaction_type }}</td>
+                <td>{{t.quantity }}</td>
+                <td>{{t.aircraft }}</td>
+
+                </tr>
+        <tr *ngIf="!fuelReport">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</li>
+
+</div>
+
+

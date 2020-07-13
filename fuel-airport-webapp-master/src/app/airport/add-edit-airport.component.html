@@ -1,0 +1,36 @@
+﻿<h1 *ngIf="isAddMode">Add Airport</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="airport_name">Airport Name</label>
+            <input type="text" formControlName="airport_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.airport_name.errors }" />
+            <div *ngIf="submitted && f.airport_name.errors" class="invalid-feedback">
+                <div *ngIf="f.airport_name.errors.required">Airport Name is required</div>
+            </div>
+        </div>
+        <div class="form-group col">
+            <label for="fuel_capacity">Fuel Capacity</label>
+            <input type="text" formControlName="fuel_capacity" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fuel_capacity.errors }" />
+            <div *ngIf="submitted && f.fuel_capacity.errors" class="invalid-feedback">
+                <div *ngIf="f.fuel_capacity.errors.required">Fuel Capacity is required</div>
+            </div>
+        </div>
+
+        <div class="form-group col">
+            <label for="fuel_available">Fuel Availablity</label>
+            <input type="text" formControlName="fuel_available" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fuel_available.errors }" />
+            <div *ngIf="submitted && f.fuel_available.errors" class="invalid-feedback">
+                <div *ngIf="f.fuel_available.errors.required">Fuel Availablity is required</div>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Save
+        </button>
+        <a routerLink="/users" class="btn btn-link">Cancel</a>
+    </div>
+</form>

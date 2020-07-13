@@ -1,0 +1,37 @@
+﻿<h1>Transactions</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add transcations</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%"> Id</th>
+            <th style="width: 30%">transaction_type</th>
+            <th style="width: 30%">Quantity</th>
+            <th style="width: 30%">Transcation Date</th>
+            <th style="width: 10%">Airport</th>
+            <th style="width: 10%">Aircraft</th>
+            <th style="width: 10%">Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transcation of transcations">
+            <td>{{transcation._id}}</td>
+            <td>{{transcation.transaction_type}}</td>
+            <td>{{transcation.quantity}}</td>
+            <td>{{transcation.transaction_date_time}}</td>
+            <td>{{transcation.airport?transcation.airport:''}}</td>
+            <td>{{transcation.aircraft?transcation.aircraft:''}}</td>
+         
+
+            <td style="white-space: nowrap">
+                <a  class="btn btn-sm btn-primary mr-1" (click)="reverseTransction(transcation._id)">Reverse</a>
+              
+            </td>
+        </tr>
+        <tr *ngIf="!transcations">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

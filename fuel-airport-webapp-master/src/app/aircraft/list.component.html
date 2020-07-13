@@ -1,0 +1,35 @@
+﻿<h1>Aircraft</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Aircraft</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%"> Id</th>
+            <th style="width: 30%">Name</th>
+            <th style="width: 30%">Airline</th>
+            <th style="width: 30%">Source</th>
+            <th style="width: 10%">Destination</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let aircraft of aircrafts">
+            <td>{{aircraft._id}}</td>
+            <td>{{aircraft.aircraft_no}}</td>
+            <td>{{aircraft.airline}}</td>
+            <td>{{aircraft.source}}</td>
+            <td>{{aircraft.destination}}</td>
+
+            <!-- <td>{{aircraft.fuel_available}}</td>  -->
+
+
+            <td style="white-space: nowrap">
+                <!-- <a routerLink="edit/{{aircraft.id}}" class="btn btn-sm btn-primary mr-1">Edit</a> -->
+              
+            </td>
+        </tr>
+        <tr *ngIf="!aircrafts">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

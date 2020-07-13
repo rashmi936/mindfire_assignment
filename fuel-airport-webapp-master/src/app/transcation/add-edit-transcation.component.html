@@ -1,0 +1,58 @@
+﻿<h1 *ngIf="isAddMode">Add Transcation</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+       <div class="form-group col">
+            <label for="transaction_type">Transction Type</label>
+            <select  formControlName="transaction_type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.transaction_type.errors }" >
+            
+            <option *ngFor="let ac of transaction_type"  value="{{ac}}">{{ac}}</option>
+            </select>
+            <div *ngIf="submitted && f.transaction_type.errors" class="invalid-feedback">
+                <div *ngIf="f.transaction_type.errors.required">Transction Type is required</div>
+            </div>
+        </div>
+
+
+ <div class="form-group col">
+            <label for="airport_id">Airport </label>
+            <select  formControlName="airport_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.airport_id.errors }" >
+            
+            <option *ngFor="let ac of airports"  value="{{ac._id}}">{{ac.airport_name}}</option>
+            </select>
+            <div *ngIf="submitted && f.airport_id.errors" class="invalid-feedback">
+                <div *ngIf="f.airport_id.errors.required">Airport No is required</div>
+            </div>
+        </div>
+
+
+
+        
+       
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="quantity">quantity</label>
+            <input type="text" formControlName="quantity" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.quantity.errors }" />
+            <div *ngIf="submitted && f.quantity.errors" class="invalid-feedback">
+                <div *ngIf="f.quantity.errors.required">quantity is required</div>
+            </div>
+        </div>
+       <div class="form-group col">
+            <label for="aircraft_id">Aircraft No</label>
+            <select  formControlName="aircraft_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.aircraft_id.errors }" >
+            
+            <option *ngFor="let ac of aircrafts"  value="{{ac._id}}">{{ac.aircraft_no}}</option>
+            </select>
+            <div *ngIf="submitted && f.aircraft_id.errors" class="invalid-feedback">
+                <div *ngIf="f.aircraft_id.errors.required">Aircraft No is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Save
+        </button>
+        <a routerLink="/users" class="btn btn-link">Cancel</a>
+    </div>
+</form>
