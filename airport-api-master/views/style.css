@@ -1,0 +1,61 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Oxygen:400,700,300);
+body{
+	margin:0px;
+	padding:0px;
+	background:#f9f9f9;
+	font-family: 'Oxygen', sans-serif;
+	color:#464646;
+}
+*{margin: 0px;padding: 0px;}
+body.inner_page{background: #fff;}
+.container_wrap{max-width:1080px;width: 100%;margin: auto;}
+/*header css starts*/
+header{background-color: #fff;padding: 15px 0px;margin-bottom: 30px;}
+.logo .logo_img{width: 50px;}
+.logo img{width:100%;}
+.logo span {
+    line-height: 51px;
+    padding: 0px 0px 0px 15px;
+    color: #464646;
+    font-weight: 700;
+    font-size: 30px;
+}
+textarea {
+    resize: none;
+}
+
+.btn_find_team,.btn_create,.btn_header{width: 160px; height: 50px; line-height: 25px;display: inline-block!important;font-size: 17px;margin-left: 15px;}
+.btn_wrap{transition: all 0.8s ease;-moz-transition: all 0.8s ease;-webkit-transition: all 0.8s ease;}
+.btn_find_team:hover,.btn_create{background-color:#4b69e9!important; color: #fff;}
+/*header ends*/
+/*confirm your slack details starts*/
+.login_box{background-color: #fff;padding: 40px 0px 80px 0px;max-width: 650px;margin: auto;box-shadow: 0px 8px 8px 8px rgba(43,59,93,0.29);}
+.form_head{font-weight: 700;margin-bottom: 50px;}
+.login_box form label{font-size: 18px;font-weight: 400; margin-bottom:5px; display:block; }
+.form_wrap{max-width:355px;margin: auto;}
+.login_box input:disabled{border: solid #ccc;border-width: 0 0 2px 0; background: transparent;}
+.btn_create{width: 292px;height: 50px;margin-top: 20px;box-shadow: 0 1px 3px rgba(0,0,0,0.4);}
+.confirm_slack_detail .btn_create{border-radius: 0%;}
+
+.form_wrap >fieldset{text-align: left;}
+.tag-form{font-size: 18px;padding: 0 5px;text-align: left;line-height: 25px;margin: 8px 0;color: #939393;}
+.find_team form label{margin: 0px 0px 15px 0;font-size: 19px;} 
+.find_team form input{height:50px;line-height: 40px;}
+
+
+
+
+.link-color{color: #4b69e9;}
+
+/*confirm your slack details ends*/
+.set_pass .form_wrap{max-width: 488px;}
+
+/* index css starts */
+
+
+/*Common*/
+.zi_note{color: #777; font-weight: normal; font-size: 11px;}
+.error {color: red; width: 100%; float: left; font-size: 12px;}
+.msgUpdate {line-height: 40px; margin: 5px; padding-left: 10px; float: left;}
+.msgSuccess { line-height: 15px; margin-top: 5px; padding-left: 0px; float: none; font-size: 12px;}
+
