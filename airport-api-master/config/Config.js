@@ -28,7 +28,7 @@ const dev = {
 Msg: Message,
 Constant: appConstant,
   MongoDb: {
-    'Database': 'mongodb://localhost:27017/rashmitest'
+    'Database': 'mongodb://localhost:27017/airport'
   },
 };
 
