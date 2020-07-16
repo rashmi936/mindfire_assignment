@@ -37,7 +37,7 @@
 
 # Step 5: Base url 
 
-    http://localhost:3000/
+    http://localhost:3000/app
 
 
 
