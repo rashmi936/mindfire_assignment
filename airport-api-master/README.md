@@ -1,37 +1,41 @@
-# Node and Mongo base api
+#  Install Node Js
 
+    https://nodejs.org/en/download/
 
-install node js and start mongodb
+# Install Mongodb
 
-you can change dbname from config file otherwise rashmitest
-
-# Find Database Dump
-
-db (folder inside)
-
-
-# Restore Database 
-
-mongorestore --db databasreename <path>
-  
-     ie. mongorestore --db rashmitest /db/
-
-https://stackoverflow.com/questions/18931668/how-to-restore-the-dump-into-your-running-mongodb
-
-# Get Code 
-  Download code form git
+    https://docs.mongodb.com/v4.0/installation/
     
-    https://github.com/rashmi936/airport-api.git
+# Step 1: Download code 
+
+ https://github.com/rashmi936/mindfire_assignment/
+ 
+# Step 2: Find Database backup and restore 
+          
+            db (inside api folder)       
+            
+   Restore Database 
+
+        mongorestore --db database <db_fodler_path>
+
+        example:  mongorestore --db airportdb /var/www/rashmi/airport/db/
+      
+   Refrences:
+      https://stackoverflow.com/questions/18931668/how-to-restore-the-dump-into-your-running-mongodb
+   
+ 
+
+# Step 3: Install api dependencies
 
 
-# Install dependencies  
-      npm i 
+          npm i 
 
-# Run 
-    
-    node local.js
+# Step 4: Run Api code   
 
-# Base url 
+
+       npm start
+
+# Step 5: Base url 
 
     http://localhost:3000/
 
